@@ -4,9 +4,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 INCLUDE = 'ft_printf.h'
 
-M_SRCS = ft_printf.c
+SRCS = ft_printf.c ft_format.c
 
-OBJS = $(M_SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
