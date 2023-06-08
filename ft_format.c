@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:20:05 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 11:04:07 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/08 13:40:43 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_format(va_list data, const char format)
 	if (format == 'u')
 		print_len += ft_putunbr(va_arg(data, unsigned int));
 	if (format == 'x')
-		print_len += ft_lowercase_puthex(va_arg(data, unsigned int));
+		print_len += ft_lower_puthex(va_arg(data, unsigned int));
 	if (format == 'X')
-		print_len += ft_uppercase_puthex(va_arg(data, unsigned int));
+		print_len += ft_upper_puthex(va_arg(data, unsigned int));
 	if (format == '%')
 		print_len += write(1, "%", 1);
 	return (print_len);

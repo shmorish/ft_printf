@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 11:35:46 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 13:44:30 by morishitash      ###   ########.fr       */
+/*   Created: 2023/06/08 12:01:35 by morishitash       #+#    #+#             */
+/*   Updated: 2023/06/08 13:45:43 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(uintptr_t nb)
+static int	unbr_len(unsigned int nb)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
+	len = 0;
 	if (nb == 0)
-		return (write(1, "0x0", 3));
-	write(1, "0x", 2);
+		return (1);
 	while (nb > 0)
 	{
-		if (nb % 16 < 10)
-			ft_putchar(nb % 16 + '0');
-		else
-			ft_putchar(nb % 16 + 'a' - 10);
-		nb /= 16;
-		i++;
+		nb /= 10;
+		len++;
 	}
-	return (i + 2);
+	return (len);
+}
+
+int	ft_putunbr(unsigned int nb)
+{
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		nb %= 10;
+	}
+	if (nb < 10)
+		ft_putchar(nb + '0');
+	return (unbr_len(nb));
 }

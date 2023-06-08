@@ -6,9 +6,11 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:08:13 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 11:08:53 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/08 13:44:07 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
