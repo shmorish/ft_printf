@@ -6,13 +6,13 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:20:05 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/06 16:28:38 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/08 11:04:07 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_format(va_list data, const char format)
+int	ft_format(va_list data, const char format)
 {
 	int	print_len;
 
