@@ -16,4 +16,5 @@
 
 # Tester files
 printfTester/
+ft_printfTester/
 main.c
