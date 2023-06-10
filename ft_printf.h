@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:03:09 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 13:43:52 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/10 23:42:21 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <inttypes.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_format(va_list data, const char format);
+int	ft_format(va_list *data, const char format);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putptr(uintptr_t nb);

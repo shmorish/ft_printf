@@ -6,28 +6,49 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:35:46 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 13:44:30 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/10 23:39:31 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	ptr_len(uintptr_t nb)
+{
+	int	len;
+
+	len = 0;
+	if (nb == 0)
+		return (1);
+	while (nb != 0)
+	{
+		nb /= 16;
+		len++;
+	}
+	return (len);
+}
+
+static int	ft_puthex(uintptr_t nb)
+{
+	uintptr_t	n;
+
+	n = nb;
+	if (nb > 15)
+	{
+		ft_puthex(nb / 16);
+		nb %= 16;
+	}
+	if (nb < 10)
+		ft_putchar(nb + '0');
+	if (nb >= 10)
+		ft_putchar(nb - 10 + 'a');
+	return (ptr_len(n));
+}
+
 int	ft_putptr(uintptr_t nb)
 {
-	size_t	i;
-
-	i = 0;
 	if (nb == 0)
 		return (write(1, "0x0", 3));
 	write(1, "0x", 2);
-	while (nb > 0)
-	{
-		if (nb % 16 < 10)
-			ft_putchar(nb % 16 + '0');
-		else
-			ft_putchar(nb % 16 + 'a' - 10);
-		nb /= 16;
-		i++;
-	}
-	return (i + 2);
+	ft_puthex(nb);
+	return (ptr_len(nb) + 2);
 }

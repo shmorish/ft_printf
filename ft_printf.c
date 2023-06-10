@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:59:16 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 11:03:55 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/10 23:05:56 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			result_length += ft_format(args, str[i + 1]);
+			result_length += ft_format(&args, str[i + 1]);
 			i++;
 		}
 		else
