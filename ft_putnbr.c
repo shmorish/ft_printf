@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:58:33 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 13:45:14 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/10 17:49:01 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 static int	nbr_len(int nb)
 {
-	int	len;
+	int		len;
+	long	n;
 
 	len = 0;
-	if (nb < 0)
+	n = nb;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		nb *= -1;
+		n *= -1;
 		len++;
 	}
-	while (nb > 0)
+	while (n > 0)
 	{
-		nb /= 10;
+		n /= 10;
 		len++;
 	}
 	return (len);

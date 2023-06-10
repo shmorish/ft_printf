@@ -13,3 +13,6 @@
 # Debug files
 *.dSYM/
 .vscode/
+
+# Tester files
+printfTester/
