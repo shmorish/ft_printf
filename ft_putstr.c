@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:26:28 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/08 11:29:44 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/10 23:56:27 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ static int	ft_strlen(const char *s)
 int	ft_putstr(char *s)
 {
 	if (s == NULL)
-		return (write(1, "(null)", 6));
-	return (write(1, s, ft_strlen(s)));
+		return (write(STDOUT_FILENO, "(null)", 6));
+	return (write(STDOUT_FILENO, s, ft_strlen(s)));
 }
