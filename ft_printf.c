@@ -6,7 +6,7 @@
 /*   By: morishitashoto <morishitashoto@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:59:16 by morishitash       #+#    #+#             */
-/*   Updated: 2023/06/10 23:05:56 by morishitash      ###   ########.fr       */
+/*   Updated: 2023/06/12 13:26:55 by morishitash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,19 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (result_length);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int	a;
+// 	int	b;
+// 	char *str1 = "Hello, world!";
+// 	char *str2 = "Konnichiwa, sekai!";
+
+// 	a = printf("%s %s\n", str1, str2);
+// 	b = ft_printf("%s %s\n", str1, str2);
+
+// 	printf("printf: %d\n", a);
+// 	ft_printf("ft_printf: %d\n", b);
+// }
