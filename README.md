@@ -35,3 +35,7 @@ To use the library functions in your code, simply include its header:
 ```C
 #include "ft_printf.h"
 ```
+You can use these functions by compiling your file and the archive file libft.a together.
+```shell
+$ cc your_file.c libftprintf.a
+```
